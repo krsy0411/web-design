@@ -1,0 +1,181 @@
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+*:not(input),
+*:not(textarea) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+:root {
+  --white: #ffffff;
+  --blue: #0a2c45;
+  --dark-blue: #07253a;
+  --light-blue: #4e7edf;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: var(--dark-blue);
+}
+
+.container-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-menu a,
+.btn-menu {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--white);
+  font-size: 2.5rem;
+}
+
+.container-menu a {
+  width: 1.5em;
+  height: 1.5em;
+  color: var(--dark-blue);
+  text-decoration: none;
+  transition: 0.5s;
+  border: 0.1em solid var(--white);
+}
+
+.container-menu a:hover {
+  border-color: var(--light-blue);
+  transition: 0.2s;
+}
+
+.container-menu a i {
+  color: var(--blue);
+}
+
+.container-menu .btn-menu {
+  width: 2em;
+  height: 2em;
+  transition: 0.3s;
+  border: 0.1em solid var(--white);
+}
+
+.container-menu .btn-menu:hover,
+.active {
+  border-color: var(--white);
+  color: var(--white);
+  background-color: var(--dark-blue);
+  transition: 0.2s;
+}
+
+.active {
+  transform: rotate(45deg);
+}/*# sourceMappingURL=style.css.map */
