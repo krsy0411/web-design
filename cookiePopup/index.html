@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- html 랜더링이 모두 끝난 후에 js 파일 실행 -->
+    <script defer type="module" src="/js/animate.js"></script>
+    <script defer type="module" src="/js/popup.js"></script>
+    <title>Cookie Popup</title>
+</head>
+<body>
+    <!-- a태그는 인라인 요소 -->
+    <a href="#" class="delete">Delete Cookie</a>
+    <a href="#" class="view">View Cookie</a>
+    <!-- 주요 콘텐츠의 보조적 컨텐츠 섹션을 설정 -->
+    <aside id="popup">
+        <div class="content">Welcome!</div>
+
+        <div class="wrap">
+            <input type="checkbox" id="ck">
+            <label for="ck">오늘 하루 그만보기</label>
+        </div>
+
+        <a href="#" class="close">Close</a>
+    </aside>
+</body>
+</html>

@@ -1,0 +1,72 @@
+@charset 'UTF-8';
+@import "reset";
+
+.delete {
+    // div태그가 inline처럼 배치되지만 block처럼 패딩값, 마진값, 사이즈 설정이 가능합니다.
+    display: inline-block;
+    padding: 10px 40px;
+    background: linear-gradient(30deg, #00aeff, aqua);
+    font: bold 14px/1 'arial';
+    color: #fff;
+    margin: 50px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px rgba(255,105,180,.5);
+}
+
+.view {
+    display: inline-block;
+    padding: 10px 40px;
+    background: linear-gradient(30deg, #e92dfa, hotpink);
+    font: bold 14px/1 'arial';
+    color: #fff;
+    margin: 50px;
+    border-radius: 5px;
+    // x y blur color
+    box-shadow: 5px 5px 20px rgba(255,105,180,.5);
+}
+
+#popup {
+    width: 500px;
+    height: 40px;
+    background: linear-gradient(30deg, lightgreen, #28fad7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 15px;
+    box-shadow: 10px 10px 30px rgba(144,238,144,.4);
+    // 우선 안 보이도록 처리
+    display: none;
+
+    .content {
+        // inherit popup's size
+        width: 100%;
+        min-height: 150px;
+        color: #fff;
+        font-size: 30px;
+    }
+    .wrap {
+        // inline-flex makes container element flex, but it doesn't work flexbile when item element is not flex.
+        display: inline-flex;
+
+        input {
+            border: none;
+            // it works when this elment is inline or inline-flex...
+            // it makes innerHtml font align to center,middle,end...
+            vertical-align: middßle;
+            margin-right: 10px;
+            position: relative;
+            top: 2px;
+        }
+        label {
+            color: #fff;
+            font-size: 12px;
+            vertical-align: middle;
+        }
+    }
+    .close {
+        color: #fff;
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+    }
+}
