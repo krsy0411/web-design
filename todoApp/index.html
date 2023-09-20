@@ -3,11 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawesome cdn -->
+    <script src="https://kit.fontawesome.com/6984a5c98e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/index.js"></script>
+    <!-- defer : 브라우저가 페이지의 파싱을 모두 끝내면 스크립트가 실행됨. -->
+    <script defer src="js/index.js"></script>
     <title>todo Application</title>
 </head>
 <body>
-    
+    <!-- 감싸주는 역할 -->
+    <div class="wrapper">
+        <!-- 할 일 사용자가 적는 블록 -->
+        <div class="task-input">
+            <i class="fas fa-bars-staggered"></i>
+            <input type="text" placeholder="Add a new task">
+        </div>  
+        <!-- 모두, 대중, 완료한 할 일들 컨트롤하는 부분 -->
+        <div class="controls">
+            <!-- 3가지 카테고리로 분류해서 보여줄 수 있음 -->
+            <div class="filters">
+                <span id="all" class="active">
+                    All
+                </span>
+                <span id="pending">Pending</span>
+                <span id="completd">Completed</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
+        </div>
+        <!-- 할 일들 li 태그로 생기는 곳 -->
+        <ul class="task-box"></ul>
+    </div>
 </body>
 </html>

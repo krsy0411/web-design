@@ -1,0 +1,199 @@
+@charset 'UTF-8';
+@import 'reset';
+
+// 유저가 드래그하는 곳의 색깔을 변경할 수 있는 선택자(배경, 텍스트 컬러 ...)
+::selection {
+    background-color: #1e293b;
+    color: #fff;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #1e293b;
+
+    .wrapper {
+        max-width: 405px;
+        background-color: #fff;
+        // vertical horizontal
+        // wrapper 바깥쪽으로 가로 영역은 가운데로 자동 정렬해줌
+        margin: 137px auto;
+        // wrapper 안쪽으로 여백 주기
+        // 위 가로영역 아래
+        padding: 28px 0 30px;
+        border-radius: 7px;
+        // 가로축 이동 - 세로축 이동 - 블러값 - 색상
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+        .task-input {
+            height: 52px;
+            // vertical horizontal
+            padding: 0 25px;
+            // position is calculated from normal flow
+            position: relative;
+            display: flex;
+            align-items: center;
+            // bars icon    
+            i {
+                // calculated from parent elment(task-input)
+                position: absolute;
+                // x,y
+                transform: translateX(17px);
+            }
+            // input tag
+            input {
+                height: 100%;
+                width: 100%;
+                outline: none;
+                font-size: 18px;
+                border-radius: 5px;
+                // top right bottom left
+                padding: 0 20px 0 53px;
+                border: 1px solid #999;
+                // 입력창이 포커스 되거나 활성화되어 active라는 클래스명이 추가된 경우
+                &:focus, &.active {
+                    padding-left: 52px;
+                    border: 2px solid #1e293b;
+                }
+
+                ::placeholder {
+                    color: #bfbfbf;
+                }
+            }
+        }
+
+        .controls, ul>li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .controls {
+            padding: 18px 25px;
+
+            .filters {
+                // all, pending,completed
+                span {
+                    margin: 0 8px;
+                    font-size: 17px;
+                    color: #444;
+                    cursor: pointer;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    &.active {
+                        color: #1e293b;
+                    }
+                }
+            }
+            // remove all todo lists data button
+            .clear-btn {
+                border: none;
+                opacity: 0.6;
+                outline: none;
+                color: #fff;
+                cursor: pointer;
+                font-size: 13px;
+                padding: 7px 13px;
+                border-radius: 4px;
+                letter-spacing: 0.3px;
+                // this element cannnot get any events, but it's child element can get event if it has another pointer-events value
+                pointer-events: none;
+                // transition 효과로 transform 효과 주기
+                // ex - transition으로 width를 주고 :hover에서 width값을 변경하면 width에 트랜지션효과가 발생한다
+                // 나는 이때까지 주로 all로 했었는데..이렇게 할 수가 있구나
+                transition: transform 0.25s ease;
+                // if "active" className is addedß
+                &.active {
+                    opacity: 0.9;
+                    pointer-events: auto;
+                }
+                // 사용자가 활성화한 요소(버튼 등)를 나타낸다 : 마우스 버튼을 누르는 순간부터 떼는 시점까지를 의미
+                &:active {
+                    transform: scale(0.93);
+                }
+            }
+        }
+        // task list
+        .task-box {
+            margin-top: 20px;
+            margin-right: 5px;
+            // top right bottom left
+            padding: 0 20px 10px 25px;
+            // 리스트에 데이터가 많이 누적되면, y축 방향으로는 내용이 잘리면서 필요시 스크롤바 등장(x축은 안 넘침)
+            // when lists have too much, add "overflow" className
+            &.overflow {
+                overflow-y: auto;
+                // y-max is 300px
+                max-height: 300px;
+            }
+
+            // 스크롤바 스타일링
+            // 스크롤바 전체
+            ::-webkit-scrollbar {
+                width: 5px;
+            }
+            // 스크롤바 트랙부분
+            ::-webkit-scrollbar-track {
+                background-color: #f1f1f1;
+                // 좀 둥글게 처리
+                border-radius: 25px;
+            }
+            // 스크로바 현재 위치 보여주는 진한 작은 네모
+            ::webkit-scrollbar-thumb {
+                background-color: #e6e6e6;
+                // 좀 둥글게 처리
+                border-radius: 25px;
+            }
+
+            // li tags 
+            .task {
+                list-style: none;
+                font-size: 17px;
+                margin-bottom: 18px;
+                padding-bottom: 16px;
+                // 세로 꼭대기에 위치하도록
+                align-items: flex-start;
+                border-bottom: 1px solid #ccc;
+                // li tag의 마지막꺼는 밑줄 없고 여백을 안 갖도록
+                &:last-child {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border-bottom: 0;
+                }
+                // li 태그 내에 글씨
+                .label {
+                    display: flex;
+                    align-items: flex-start;
+
+                    input {
+                        margin-top: 7px;
+                        accent-color: #1e293b;
+                    }
+                    
+                    p {
+                        // 텍스트 영역이 클릭 및 드래그로 선택되지 않는다.
+                        user-select: none;
+                        margin-left: 12px;
+                        // 영역을 벗어나는 글씨에 대해서 아래로 내려가도록
+                        word-wrap: break-word;
+                        // 만약 체크가 이뤄지면 : checked 클래스명을 주기
+                        &.checked {
+                            // 글씨 중앙에 선 긋기
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+            }
+
+            .settings {
+                position: relative;
+                // settings 내에 i, li태그들에 적용되는 옵션
+                &:where(i, li) {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
