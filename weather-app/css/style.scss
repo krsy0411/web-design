@@ -1,0 +1,181 @@
+@charset 'UTF-8';
+@import 'reset';
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #06283D;
+
+    .container {
+        // 자신의 원래 위치를 기준으로 배치
+        position: relative;
+        width: 400px;
+        height: 105px;
+        background-color: #fff;
+        padding: 28px 32px;
+        overflow: hidden;
+        border-radius: 18px;
+        font-family: 'Roboto', sans-serif;
+        // normal -> slow :  ease-out
+        transition: 0.6s ease-out;
+
+        .search-box {
+            width: 100%;
+            height: min-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            input {
+                color: #06283D;
+                width: 80%;
+                font-size: 24px;
+                font-weight: 500;
+                text-transform: uppercase;
+                padding-left: 6vw;
+
+                &::placeholder {
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: #06283D;
+                    // 첫번째 글자를 대문자로 변경
+                    text-transform: capitalize;
+                }
+            }
+
+            button {
+                cursor: pointer;
+                width: 50px;
+                height: 50px;
+                color: #06283D;
+                background: #dff6ff;
+                border-radius: 50%;
+                font-size: 22px;
+                // ease : slow -> fast -> slow
+                transition: 0.4s ease;
+
+                &:hover {
+                    color: #fff;
+                    background-color: #06283D;
+                }
+            }
+            
+            i {
+                // 상위 태그 중 static이 아닌 요소 기준으로 배치
+                position: absolute;
+                color: #06283D;
+                font-size: 28px;
+            }
+        }
+
+        .not-found {
+            width: 100%;
+            text-align: center;
+            margin-top: 50px;
+            // 초기에는 디스플레이에 보이지 않도록s
+            scale: 0;
+            opacity: 0;
+            display: none;
+
+            img {
+                width: 70%;
+            }
+
+            p {
+                color: #06283D;
+                font-size: 22px;
+                font-weight: 500;
+                margin-top: 12px;
+            }
+        }
+
+        .weather-box {
+            text-align: center;
+            img {
+                width: 60%;
+                margin-top: 30px;
+            }
+            .temperature {
+                position: relative;
+                color: #06283D;
+                font-size: 4rem;
+                font-weight: 800;
+                margin-top: 30px;
+                margin-left: -16px;
+
+                .span {
+                    position: absolute;
+                    margin-left: 4px;
+                    font-size: 1.5rem;
+                }
+            }
+            .description {
+                color: #06283D;
+                font-size: 22px;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+        }
+        // 날씨 부가 설명 부분
+        .weather-details {
+            width: 100%;
+            // 현재 안 먹는 부분
+            display: flex;
+            justify-content: center;
+            margin-top: 30px; 
+            // 가로배치 
+            .humidity, .wind {
+                display: flex;
+                align-items: center;
+                width: 50%;
+                height: 100px;
+            }
+            // 가로의 시작부분으로 배치
+            .humidity {
+                padding-left: 20px;
+                justify-content: flex-start;
+            }
+            // 가로의 끝부분으로 배치
+            .wind {
+                padding-right: 20px;
+                justify-content: flex-end;
+            }
+            i {
+                color: #06283D;
+                font-size: 26px;
+                margin-right: 10px;
+                margin-top: 6px;
+            }
+            span {
+                color: #06283D;
+                font-size: 22px;
+                font-weight: 500;
+            }
+            p {
+                color: #06283D;
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+        .wetaher-box, .weather-details {
+            opacity: 0;
+            scale: 0;
+        }
+        //fadeIn 클래스명이 추가된 경우
+        .fadeIn {
+            // 0.5초 후에 0.5초동안 페이드인 옵션으로 서서히 들어내기
+            animation: 0.5s fadeIn forwards;
+            animation-delay: 0.5s;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}

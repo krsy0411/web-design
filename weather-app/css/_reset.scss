@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    // 보더 바깥쪽 테두리 요소
+    outline: none;
+    // 너비와 높이를 박스 테두리를 포함한 사이즈로 스타일 결정
+    box-sizing: border-box;
+}
