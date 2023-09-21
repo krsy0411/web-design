@@ -4,7 +4,7 @@ const clearAll = document.querySelector('.clear-btn');
 const taskBox = document.querySelector('.task-box');
 
 let editId = false;
-let isEdittask = false;
+let isEditTask = false;
 // 로컬스토리지 내부 json data를 파싱해서 객체화
 let todos = JSON.parse(localStorage.getItem('todo-list'));
 
@@ -18,16 +18,16 @@ filters.forEach((btn)=> {
     });
 });
 
-const showTodo = (btnId) => {
+const showTodo = (filterBtnId) => {
     let liTag = '';
     // 로컬 스토리지에 투두리스트 데이터가 존재하면
     if(todos) {
         // todo data , idx
         todos.forEach((todo, id) => {
-            // todo의 status가 완성인 경우, 체크
+            // todo의 status가 "completed"라면 "checked" / 아니라면 빈 문자열
             let completed = todo.status == "completed" ? "checked" : '';
             // 버튼 id값이 all이거나 staus를 나타내는 경우
-            if(btnId == todo.status || btnId == 'all') {
+            if(filterBtnId == todo.status || filterBtnId == 'all') {
                 liTag += 
                 `
                     <li class="task">
@@ -39,7 +39,7 @@ const showTodo = (btnId) => {
                             <i onclick="showMenu(this)" class="fa-light fa-ellipsis"></i>
                             <ul class="task-menu">
                                 <li onclick="editTask(${id}, '${todo.name}')"><i class="fa-solid fa-pen"></i>Edit</li>
-                                <li onclick="deleteTask(${id}", '${btnId}')"><i class="fa-solid fa-trash"></i>Delete</li>
+                                <li onclick="deleteTask(${id}, '${filterBtnId}')"><i class="fa-solid fa-trash"></i>Delete</li>
                             </ul>
                         </div>
                     </li>
@@ -54,3 +54,51 @@ const showTodo = (btnId) => {
         })
     }   
 }   
+
+showTodo('all');
+
+const showMenu = (selectedTask) => {
+    // 
+    let taskMenuDiv = selectedTask.parentElement.lastElementchild;
+    taskMenuDiv.classList.add('show');
+    document.addEventListener('click', (e) => {
+        // 현재 클릭된 요소의 태그 이름이 i가 아니거나 현재 선택된 업무가 아니면
+        if(e.target.tagName != "I" || e.target != selectedTask) {
+            taskMenuDiv.classList.remove('show');
+        }
+    })
+}
+
+const updateStatus = (selectedTask) => {
+    let taskName = selectedTask.parentElement.lastElementchild;
+    // selectedTask의 클래스 목록에 checked가 존재하면
+    if (selectedTask.checked) {
+        taskName.classList.add('checked');
+        // status를 "완료"로
+        todos[selectedTask.id].status = "completed";
+    } else {
+        taskName.classList.remove('checked');
+        // status를 "대기"로
+        todos[selectedTask.id].status = "pending";
+    }
+    localStorage.setItem('todo-list', JSON.stringify(todos));
+}
+
+const editTask = (taskId, textName) => {
+    // just for utilizing id value
+    editId = taskId;
+    isEditTask = true;
+    taskInput.value = textName;
+    taskInput.focus();
+    taskInput.classList.add('active');    
+}
+
+const deleteTask = (deleteId, filterBtnId) => {
+    isEditTask = false,
+    // 요소 하나만 잘라내기
+    todos.splice(deleteId, 1);
+    localStorage.setItem('todo-list', JSON.stringify(todos));
+    // 지워진 updated todos로 다시 show
+    showTodo(filterBtnId);
+}
+
