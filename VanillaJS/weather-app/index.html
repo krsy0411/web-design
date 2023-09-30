@@ -1,56 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#">
-    <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
-    rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/6984a5c98e.js" crossorigin="anonymous"></script>
-    <title>Weather App</title>
-</head>
-<body>
-    <div class="container">
-        <div class="search-box">
-            <i class="fa-solid fa-location-dot"></i>
-            <input type="text" placeholder="Enter your location">
-            <!-- 버튼 안에 폰트 아이콘 집어넣기 : 클래스명에 font-awesome className 주기 -->
-            <button class="fa-solid fa-magnifying-glass"></button>
-        </div>
-
-        <div class="not-found">
-            <img src="img/404.png" alt="404 img">
-            <p>Invalid location</p>
-        </div>
-
-        <div class="weather-box">
-            <img src="" alt="i-don't know">
-            <p class="temperature"></p>
-            <p class="description"></p>
-        </div>
-        <!-- 습도 -->
-        <div class="weather-details">
-            <div class="humidity">
-                <i class="fa-solid fa-water"></i>
-                <div class="text">
-                    <!-- js를 통해 데이터를 가져왔을때 글씨가 추가되는 부분 -->
-                    <span></span>
-                    <p>Humidity</p>
-                </div>
-            </div>
-            <!-- 풍속 -->
-            <div class="wind">
-                <i class="fa-solid fa-wind"></i>
-                <div class="text">
-                    <!-- js를 통해 데이터를 가져왔을때 글씨가 추가되는 부분 -->
-                    <span></span>
-                    <p>Wind speed</p>
-                </div>
-            </div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>deceit-cat</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="user-container">
+        <label for="nickname">유저명</label>
+        <input type="text" id="nickname" />
+      </div>
+      <div class="display-container">
+        <ul class="chatting-list"></ul>
+      </div>
+      <div class="input-container">
+        <span>
+          <input type="text" class="chatting-input" />
+          <button class="send-button">전송</button>
+        </span>
+      </div>
     </div>
-    <script src="/js/index.js"></script>
-</body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/chat.js"></script>
+  </body>
 </html>
