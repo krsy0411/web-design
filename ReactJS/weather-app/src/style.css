@@ -1,0 +1,57 @@
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  height: 700px;
+  width: 960px;
+  /* 박스 크기 넘어가는 내용물은 다음 줄로 넘기기 */
+  flex-wrap: wrap;
+  border-radius: 25px;
+  border: 2px solid #ced1d4;
+  /* x y blur 그림자 확산 거리 rgba */
+  /* 4면 모두 그림자 효과 주기 위해 2개로 작성 */
+  box-shadow: 0 26px 52px 0 rgba(0, 0, 0, 0.2), 0 16px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container .weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  /* 중앙정렬 */
+  margin: auto;
+}
+
+.container .temperature-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  justify-content: space-evenly;
+}
+
+.container .extra-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  justify-content: space-between;
+}
+
+.container .extra-info .extra-info-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+}
+
+.container .extra-info .extra-info-text {
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+}

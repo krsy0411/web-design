@@ -1,24 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import './style.css';
+import { WeatherProvider } from './WeatherProvider/WeatherProvider';
+import { WeatherApp } from './WeatherApp';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // context api를 통해 전역으로 넘긴 상태를 WeatherProvider 아래 자식으로 존재하는 컴포넌트들에서 사용가능
+    <WeatherProvider>
+      <WeatherApp />
+    </WeatherProvider>
   );
 }
 
