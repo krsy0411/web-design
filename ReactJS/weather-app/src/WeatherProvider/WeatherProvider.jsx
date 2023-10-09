@@ -2,10 +2,10 @@ import React, { createContext, useEffect, useState } from "react";
 import { APIKEY } from "../api";
 
 export const WeatherContext = createContext({});
-const key = APIKEY
+
 export function WeatherProvider({ children }) {
   const [weatherInfo, setWeatherInfo] = useState({});
-
+  const key = APIKEY
   const getWeatherInfo = async () => {
     try {
       const currentWeatherInfoAPI =
@@ -43,6 +43,8 @@ export function WeatherProvider({ children }) {
 
   useEffect(() => {
     getWeatherInfo();
+    console.log(weatherInfo);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

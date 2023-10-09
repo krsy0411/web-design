@@ -1,5 +1,9 @@
 import { Box, Tab, Tabs } from "@mui/material";
 import React, { useState } from "react";
+import WeatherGraph from "../Graph/WeatherGraph";
+import WindGraph from "../Graph/WindGraph";
+import "swiper/css";
+import "swiper/css/navigation";
 
 function TabPanel({ children, value, index }) {
   return (
@@ -14,6 +18,7 @@ export function WeatherTab() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -24,13 +29,13 @@ export function WeatherTab() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        1
+        <WeatherGraph />
       </TabPanel>
       <TabPanel value={value} index={1}>
         2
       </TabPanel>
       <TabPanel value={value} index={2}>
-        3
+        <WindGraph />
       </TabPanel>
     </Box>
   );
