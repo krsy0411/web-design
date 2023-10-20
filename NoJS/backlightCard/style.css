@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    background-color: #000;
+}
+
+div {
+    /* default value of position : static : 문서 흐름에 맞춰 배치하는 방식 */
+    /* relative : 이전 요소(주로 부모)에 자연스레 연결하여 위치를 지정하는 방식 */
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    line-height: 20rem;
+    text-align: center;
+    /* default font-color */
+    color: #252b37;
+    /* div box color */
+    background-color: #151823;
+    /* font의 컬러가 변경됨 : 1 사이클이 10초 : 무한반복 */
+    animation: textColor 10s ease infinite;
+}
+
+div::after {
+    /* 내용물 없게끔 */
+    content: "";
+    position: absolute;
+    /* 상위에 position이 설정되어 있는 div태그로부터의 상대적인 절대위치 결정 */
+    top: 5vw;
+    left: 0;
+    right: 0;
+    /* div태그 아래에 가도록 */
+    z-index: -1;
+    /* 크기 설정 + 정중앙 배치하는 하나의 방식*/
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    /* 좀 흐리게 만들기 */
+    filter: blur(5vw);
+    /* 스케일 줄이기 */
+    transform: scale(0.85);
+    /* background-color는 단순 rgba값만 줄 수 있음(gradient값 설정 못 함) : 새로 안 점 : gradient값은 이미지처리가 되는 듯 하다 */
+    /* 레퍼런스 : https://aboooks.tistory.com/362 */
+    /* 각도 : 0(상단->하단), 90(우측->좌측), 180(하단->상단), 270(좌측->우측) */
+    background-image: linear-gradient(270deg, #0fffc1, #7e0fff);
+    /* 배경 이미지 하나를 여러크기로 쪼갤 수 있음(4배 사이즈가 하나가 되도록 설정) */
+    background-size: 200% 200%;
+    animation: animateGlow 10s ease infinite;
+}
+
+@keyframes textColor {
+    0% {
+        color: #7e0fff;
+    }
+    50% {
+        color: #0fffc1;
+    }
+    100% {
+        color: #7e0fff;
+    }
+}
+/* after element의 초기 색깔이 보라-연두인데, 보라(세로중앙) <-> 연두(세로중앙) 방식으로 애니메이션의 색을 결정짓는다 */
+/* x,y좌표값 */
+@keyframes animateGlow {
+    /* 즉, 초기엔 보라 */
+    0% {
+        background-position: 0% 50%;
+    }
+    /* 5초일땐, 연두 */
+    50% {
+        background-position: 100% 50%;
+    }
+    /* 다시 보라로 되돌아가는 과정 */
+    100% {
+        background-position: 0% 50%;
+    }
+}
