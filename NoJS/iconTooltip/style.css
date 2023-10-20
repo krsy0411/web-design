@@ -30,7 +30,8 @@ body {
     border-radius: 8px;
     overflow: hidden;
     /* inline-flex는 직계자식이 반응형이 아니므로 잘 사용하지 않음 */
-    display: flex;
+    display: inline-flex;
+    /* 세로축은 중앙정렬 */
     align-items: center;
     /* 내부 글씨가 부모 태그의 가로 사이즈를 넘어가도 wrap되지 않도록 설정 */
     white-space: nowrap;
@@ -43,5 +44,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* width / height 비율 설정 : height는 50px로 설정되어있음 */
     aspect-ratio: 1/1;
+}
+
+.section:hover {
+    width: 140px;
+    transition: width 300ms ease-in-out 0s, background-color 100ms linear 0s;
+}
+.section::after {
+    /* attrs reference : https://blog.naver.com/PostView.nhn?blogId=011ysy&logNo=222149713725&parentCategoryNo=&categoryNo=57&viewDate=&isShowPopularPosts=true&from=search */
+    content: attr(tooltip);
+    margin-left: 10px;
+}
+.facebook:hover {
+    background-color: #3b5998;
+}
+.instagram:hover {
+    background-color: #3f729b;
+}
+.youtube:hover {
+    background-color: #cd201f;
+}
+.github:hover {
+    background-color: #55acee;
+}
+.codepen:hover {
+    background-color: #333;
 }
