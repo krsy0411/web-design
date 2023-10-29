@@ -16,6 +16,8 @@
     * require
     * placeholder?
     * text?
+    * **비밀번호**
+        * strong : 얼마나 복잡한 패스워드를 적었는지에 대한 데이터
 * 클래스에서 추가로 처리되는 데이터
     * updated
     * valid
