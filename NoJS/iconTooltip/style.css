@@ -50,6 +50,7 @@ body {
 
 .section:hover {
     width: 140px;
+    /* 넓이값이 변화하는 경우 or 배경색이 변화하는 경우의 트랜지션 각각 설정 */
     transition: width 300ms ease-in-out 0s, background-color 100ms linear 0s;
 }
 .section::after {
