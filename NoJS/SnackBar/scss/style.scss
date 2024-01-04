@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+// css-rule to use google-font -> font-family: 'Roboto', sans-serif;
+:root {
+    --success: #327B32;
+    --text: #F2ECFF;
+    --background: #1F1F1F;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    // 박스들의 끝 스타일을 맞추기 위한 옵션
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    display: grid;
+    // align-items & justify-content 설정을 한 번에 하게 도와주는 property : only with grid or flex
+    place-items: center;
+    font-size: 16px;
+    height: 100vh;
+
+    .trigger-button {
+        background-color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        // 외부 윤곽선 제거
+        outline: none;
+        border: none;
+        // <html> tag의 폰트 크기를 기준으로 함 : rem
+        font-size: 0.8rem;
+        min-height: 40px;
+        max-width: 160px;
+        width: 100%;
+        font-weight: 600;
+        transition: all 0.25s;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .notification {
+        // body를 기준으로
+        position: absolute;
+        bottom: 16px;
+
+        // 세로 가로
+        padding: 0 8px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        background-color: var(--success);
+        color: var(--text);
+        // x y blur color
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+
+    }
+}
+
+// 나타날때의 애니메이션
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        min-height: 40vh;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        min-height: 60vh;
+        visibility: visible;
+    }
+}
+
+// 사라질때의 애니메이션
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+        min-height: 60px;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        min-height: 40px;
+        visibility: hidden;
+    }
+}
