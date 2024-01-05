@@ -77,6 +77,23 @@ body .card .chart-area .grid::after {
   background: linear-gradient(180deg, rgb(27, 27, 27), rgba(27, 27, 27, 0.9), rgb(27, 27, 27));
 }
 
+body .apexcharts-tooltip.apexcharts-theme-light {
+  color: #e2dede;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  box-shadow: none;
+  padding: 4px 4px 0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: 0;
+}
+
+.apexcharts-tooltip-title, .apexcharts-xaxistooltip-bottom.apexcharts-theme-light {
+  display: none;
+}
+
 @keyframes pulse {
   70% {
     scale: 0;
