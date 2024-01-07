@@ -99,4 +99,7 @@ body .container #text-input {
   border: 1px solid #ddd;
   padding: 20px;
   height: 50vh;
+}
+body .active {
+  background-color: #e0e9ff;
 }/*# sourceMappingURL=style.css.map */
