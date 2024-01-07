@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    background-color: #338cf4;
+
+    .container {
+        background-color: #fff;
+        // 현재 뷰포트의 너비(vw)와 높이(vh) 중 작은 값의 90%에 해당하는 너비를 갖는 요소
+        width: 90vmin;
+        padding: 50px 30px;
+        // 위치는 중앙으로 지정
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        border-radius: 10px;
+        box-shadow: 0 25px 50px rgba(7, 20, 35, 0.2);
+
+        .option {
+            // 버튼(옵션)들을 반응형으로 만들기
+            display: flex;
+            align-items: center;
+
+            // 자식 요소들을 여러 행으로 나누어 표시
+            flex-wrap: wrap;
+            // 자식 태그들의 서로서로 갭 설정
+            gap: 15px;
+
+            button {
+                // 각 버튼들의 사이즈 결정
+                width: 28px;
+                height: 28px;
+
+                // 버튼들의 내부를 결정 : 그리드 형식으로 내부 아이콘 스타일링 결정
+                display: grid;
+                // CSS Grid 레이아웃(flex layout에서는 불가)에서 사용되는 속성 중 하나 : 그리드 컨테이너의 align-items와 justify-items 속성을 동시에 설정하는 단축 속성
+                // 수직 수평 가운데 정렬
+                place-items: center;
+                border-radius: 3px;
+                // 테두리가 필요하지 않은 경우에 활용
+                border: none;
+                // 사용자에게 포커스 표시가 필요하지 않은 경우에 활용
+                outline: none;
+                background-color: #fff;
+                color: #020929;
+                cursor: pointer;
+            }
+
+            select {
+                padding: 7px;
+                border: 1px solid #020929;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+
+            label, select {
+                font-family: 'Poppins', sans-serif;
+            }
+
+            input[type="color"] {
+                border-radius: 15px;
+                box-shadow: 0 0 0 2px #fff, 0 0 0 3px #020929;
+            }
+        }
+
+        #text-input {
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            height: 50vh;
+        }
+    }
+}
