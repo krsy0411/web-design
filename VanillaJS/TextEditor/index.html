@@ -6,7 +6,7 @@
     <meta name="텍스트 편집기" content="바닐라JS로 만들기">
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://kit.fontawesome.com/6984a5c98e.js" crossorigin="anonymous"></script>
-    <script src="/js/script.js"></script>
+    <script defer src="/js/script.js"></script>
     <title>Text Editor</title>
 </head>
 <body>
@@ -65,6 +65,7 @@
                 <option value="H5">H5</option>
                 <option value="H6">H6</option>
             </select>
+            <!-- js에서 동적으로 옵션을 넣을 예정입니다. -->
             <select id="fontName" class="adv-option-button"></select>
             <select id="fontSize" class="adv-option-button"></select>
             <div class="input-wrapper">
@@ -76,7 +77,7 @@
                 <label for="backColor">Highlight Color</label>
             </div>
         </div>
-        
+
         <div id="text-input" contenteditable="true"></div>
     </div>
 </body>
