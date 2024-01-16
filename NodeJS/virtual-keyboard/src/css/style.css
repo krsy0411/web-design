@@ -1,0 +1,86 @@
+* {
+    user-select: none;
+    outline: none;
+}
+
+html[theme="dark-mode"] {
+    filter: invert(100%) hue-rotate(180deg);
+}
+
+body {
+    background-color: white;
+}
+
+.container {
+    width: 1050px;
+    margin: auto;
+}
+
+.keyboard {
+    background-color: gray;
+    color: gray;
+    width: 1050px;
+    border-radius: 4px;
+}
+
+.row {
+    display: flex;
+}
+
+.key {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: 0.2s;
+}
+.key:hover, .key:active {
+    background-color: lightgray;
+}
+.key .two-value {
+    width: 100%;
+    text-align: center;
+}
+
+.fn-key {
+    width: 80px;
+  }
+  
+.space-key {
+    width: 420px;
+}
+
+.back-space-key {
+    width: 130px;
+}
+
+.tab-key {
+    width: 95px;
+}
+
+.back-slash-key {
+    width: 95px;
+}
+
+.caps-lock-key {
+    width: 110px;
+}
+
+.left-shift-key {
+    width: 145px;
+}
+
+.enter-key {
+    width: 150px;
+}
+
+.right-shift-key {
+    width: 185px;
+}
