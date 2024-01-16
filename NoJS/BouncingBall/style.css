@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(247, 247, 247);
+}
+
+.card-container {
+    width: 25rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    position: relative;
+
+    width: 100%;
+    height: 23rem;
+
+    display: flex;
+    place-content: center center;
+    border-radius: 0.25rem;
+}
+.ball-bouncing {
+    background-color: #f9eeab;
+}
+.ball-bouncing::before {
+    content: "";
+    width: 2rem;
+    height: 0.15rem;
+    position: absolute;
+    bottom: 2rem;
+
+    animation: shadowBouncing 1.2s ease-in infinite;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 1rem;
+}
+
+.ball {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+
+    background-color: #fff;
+    border-radius: 50%;
+}
+.ball-bouncing .ball{
+    animation: ballBouncing 1.2s ease-in infinite;
+    bottom: 2.1rem;
+    transform-origin: bottom;
+}
+
+
+
+@keyframes ballBouncing {
+    0%, 100% {
+        /* x-axis, y-axis */
+        transform: scale(1.5, 0.5);
+    }
+    20% {
+        transform: scaleY(1.2);
+    }
+    40%, 80% {
+        transform: translateY(-14rem);
+    }
+    70% {
+        transform: translateY(-15rem);
+    }
+    90% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes shadowBouncing {
+    0%, 100% {
+        transform: scale(2, 0.8);
+    }
+    20% {
+        transform: scale(1.2, 0.8);
+    }
+    40%, 80% {
+        transform: scale(0.5, 0.2);
+    }
+    70% {
+        transform: scale(0.5, 0.15);
+    }
+    90% {
+        transform: scale(1.5, 0.6);
+    }
+}
