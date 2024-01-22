@@ -1,13 +1,6 @@
 import { useRef } from "react"
 import MenuButton from "./MenuButton";
-
-interface MenuItemProps {
-    name: string,
-    index: number,
-    activeSubMenu: number,
-    subItems: string[],
-    onClick: (index: number, subMenuHeight: number) => void
-}
+import { MenuItemProps } from "../../type/props.type";
 
 export default function MenuItem({
     name,
@@ -16,7 +9,7 @@ export default function MenuItem({
     subItems,
     onClick
 }: MenuItemProps) {
-    const subMenuRef = useRef<any>(null);
+    const subMenuRef = useRef<HTMLDivElement>(null);
     const isActive = activeSubMenu === index;
 
     return (
@@ -32,14 +25,14 @@ export default function MenuItem({
             />
             {
                 subItems?.length && (
-                    <nav
+                    <div
                         ref={subMenuRef}
                         className={`sub-menu ${isActive ? "open" : ""}`}
                     >
                         <MenuButton 
                             onClick={onClick}
-                            icon="arrow-back"
-                            name="name"
+                            icon="arrow_back"
+                            name={name}
                         />
                         {
                             subItems?.map(subItem => (
@@ -49,7 +42,7 @@ export default function MenuItem({
                                 />
                             ))
                         }
-                    </nav>
+                    </div>
                 )
             }
         </>

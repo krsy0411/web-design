@@ -1,11 +1,4 @@
-interface MenuBtnProps {
-    name: string,
-    icon?: string,
-    index?: number,
-    hasSubItems?: boolean,
-    subMenuHeight?: number,
-    onClick?: (index: number, subMenuHeight: number) => void
-}
+import { MenuBtnProps } from "../../type/props.type"
 
 export default function MenuButton({
     name,
@@ -21,9 +14,9 @@ export default function MenuButton({
             <button onClick={() => {
                 onClick ? onClick(index as number, subMenuHeight as number) : null
             }}>
-                <span>{icon || name}</span>
+                <span className="material-symbols-outlined">{icon || name}</span>
                 {name}
-                {hasSubItems && <span>Chevron_right</span>}
+                {hasSubItems && <span className="chevron material-symbols-outlined">Chevron_right</span>}
             </button>
         </>
     )

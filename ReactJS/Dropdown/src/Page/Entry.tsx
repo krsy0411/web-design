@@ -1,16 +1,19 @@
 import { useState } from "react";
 import MenuItem from "../components/Menu/MenuItem";
 
-
 const items = [
     {
-        name: "build",
-        subItems: [
-            "description",
-            "folder",
-        ],
-    }
-]
+      name: "build",
+      subItems: ["description", "folder", "article"],
+    },
+    {
+      name: "devices",
+      subItems: ["storage", "mouse", "keyboard", "headphones"],
+    },
+    {
+      name: "logout",
+    },
+];
 
 export function Dropdown() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -28,15 +31,17 @@ export function Dropdown() {
 
     return (
         <>
-            <div className={`dropdown ${isOpen ? "open" : ""}`}>
+            <div className={`dropdown ${isOpen ? "open" : ""}`} style={{ translate: "0 -50px" }}>
                 <button onClick={() => setIsOpen(!isOpen)}>
-                    Preference
+                    <span className="material-symbols-outlined"> settings </span>
+                        Preferences
+                    <span className="chevron material-symbols-outlined"> expand_more </span>
                 </button>
                 <div
-                    style={{height: `${subMenuHeight || 168}px`}}
+                    style={{height: `${subMenuHeight || 138}px`}}
                     className="menu"
                 >
-                    <div className={`menu-linear ${isSubMenuOpen ? "open" : ""}`}>
+                    <div className={`menu-inner ${isSubMenuOpen ? "open" : ""}`}>
                         <nav className="main-menu">
                             {
                                 items.map((item,index) => (
