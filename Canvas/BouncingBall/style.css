@@ -1,0 +1,27 @@
+* {
+    /* 텍스트 영역이 클릭 및 드래그로 선택 불가능 */
+    user-select: none;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    /* 브라우저 사이즈를 100%로 만들기 */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #161e38;
+}
+
+canvas {
+    /* 캔버스 크기도 브라우저 사이즈에 알맞게 100%로 설정 */
+    width: 100%;
+    height: 100%;
+}
