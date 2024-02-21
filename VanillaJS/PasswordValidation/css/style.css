@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    /* reset */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* body tag is flex-container */
+    display: flex;
+    min-height: 100vh;
+    /* 가로세로 중앙 배치 */
+    align-items: center;
+    justify-content: center;
+    background: #11131e;
+}
+
+/* wrapper is flex-item */
+body > .wrapper {
+    width: 450px;
+    overflow: hidden;
+    padding: 28px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.wrapper > .pass-field {
+    height: 65px;
+    width: 100%;
+    position: relative;
+}
+
+.pass-field > input {
+    /* input layout관련 처리 */
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 17px;
+    border-radius: 5px;
+    border: 1px solid #999;
+
+    /* input 내부 text 속성처리 */
+    font-size: 1.3rem;
+}
+
+.pass-field input:focus {
+    /* vertical horizontal */
+    padding: 0 16px;
+    border: 2px solid #4185f4;
+}
+
+.pass-field > i {
+    /* i태그 위치 결정 속성 */
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* text 관련 처리 */
+    font-size: 1.2rem;
+    color: #999;
+    /* 나머지 */
+    cursor: pointer;
+}
+
+.wrapper > .content {
+    /* 상 수평 하 */
+    margin: 20px 0 10px;
+}
+
+.content > p {
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.content > .requirement-list {
+    margin-top: 20px;
+}
+
+.requirement-list > li {
+    list-style: none;
+    /* li태그 자식태그들의 flex-container */
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    /* li태그 내부 font속성 */
+    font-size: 1.3rem;
+}
+
+.requirement-list > li > i {
+    width: 20px;
+    color: #aaa;
+    font-size: 0.6rem;
+}
+/* 특정 조건을 만족한 li태그에 대한 스타일 처리 */
+.requirement-list > li.valid > i {
+    font-size: 1.2rem;
+    color: #4285f4;
+}
+
+.requirement-list > li > span {
+    margin-left: 12px;
+    color: #333;
+}
+/* 특정 조건을 만족한 li태그에 대한 스타일 처리 */
+.requirement-list > li.valid > span {
+    color: #999;
+}
+/* 화면 너비가 500px이하일때만 적용되는 미디어쿼리 */
+@media screen and (max-width: 500px) {
+    body, .wrapper {
+        padding: 15px;
+    }
+    .wrapper .pass-field {
+        height: 55px;
+    }
+    .pass-field input, .content p {
+        font-size: 1.15rem;
+    }
+    .pass-field i, .requirement-list li {
+        font-size: 1.1rem;
+    }
+    .requirement-list li span {
+        margin-left: 7px;
+    }
+}
