@@ -1,0 +1,35 @@
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a > i {
+    font-size: 32px;
+}
+
+p.oswald-paragraph {
+    font-weight: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+div.first {
+    border: 3px solid black;
+}
+
+div.second {
+    border: 3px solid blue;
+}
+
+div.gap {
+    width: 100%;
+    height: 50px;
+}
+
+.list-container {
+    border: 3px solid orange;
+}
+.list-container > ul {
+    list-style-type: none;
+}

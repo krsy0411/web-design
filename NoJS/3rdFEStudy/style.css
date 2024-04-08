@@ -1,0 +1,37 @@
+#UniqueName {
+    font-size: 32px;
+    font-weight: bold;
+    color: blue;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+input[placeholder] {
+    border: 1px solid orange;
+}
+
+div.inheritance-container {
+    width: 800px;
+    border: 1px solid black;
+    font-weight: 700;
+    font-size: large;
+}
+
+pre {
+    border: 1px solid blue;
+}
+
+p.inheritance-item {
+    border: 1px solid orange;
+}
+
+div.pseudo-container {
+    border: 1px solid red;
+}
+
+li:nth-child(3) {
+    font-weight: bold;
+    font-size: large;
+}
