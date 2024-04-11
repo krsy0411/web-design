@@ -1,0 +1,52 @@
+* {
+    list-style: none;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    border: 1px solid black;
+}
+
+.item {
+    border: 1px solid orange;
+    /* 메인축의 너비를 결정합니다 : direction에 따라 너비 방향이 달라져요 */
+    flex-basis: 75px;
+    /* flex-shrink값에 0을 주면, flex-basis값이 최소값이 됩니다 */
+    flex-shrink: 1;
+    /* 태그들에만 적용되는게 아닙니다. content(글씨)에도 적용돼요 */
+    display: flex;
+    /* 글씨 중앙 정렬 */
+    justify-content: center;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+.align-1 {
+    justify-content: space-between;
+}
+.align-2 {
+    justify-content: center;
+}
+.align-3 {
+    justify-content: space-evenly;
+}
+.direction {
+    flex-direction: column;
+}
+
+/* 여백 만드는 div */
+.gap {
+    width: 100%;
+    height: 50px;
+}

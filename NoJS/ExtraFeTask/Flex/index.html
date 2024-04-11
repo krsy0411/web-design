@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Flex</title>
+</head>
+<body>
+    <h1>Flex 사용 안 했어요</h1>
+    <div class="container no-flex">
+        <!-- 느껴지시나요? 인라인요소랑 블록요소의 차이를 일단 느끼세요 -->
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+    </div>
+
+    <div class="gap"></div>
+
+    <h1>정렬 안 시킨 버전</h1>
+    <div class="container flex">
+        <!-- 느껴지시나요? flex를 쓰니까 블록요소가 인라인 요소처럼 한 줄을 더이상 차지하지 않습니다. -->
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+    </div>
+
+    <div class="gap"></div>
+
+    <h1>Justify-Content : Space-Between</h1>
+    <div class="container flex align-1">
+        <!-- 가로축 정렬 : space-between -->
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+    </div>
+
+    <div class="gap"></div>
+
+    <h1>Justify-Content : Center</h1>
+    <div class="container flex align-2">
+        <!-- 가로축 정렬 : center -->
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+    </div>
+
+    <div class="gap"></div>
+
+    <h1>Justify-Content : Space-evenly</h1>
+    <div class="container flex align-3">
+        <!-- 가로축 정렬 : space-evenly -->
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+    </div>
+
+    <div class="gap"></div>
+
+    <h1>Flex Direction : column</h1>
+    <div class="container flex direction">
+        <!-- 가로축 정렬 : space-evenly -->
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+    </div>
+</body>
+</html>
