@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dark Theme</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- fontawesome cdn -->
+    <script src="https://kit.fontawesome.com/6984a5c98e.js" crossorigin="anonymous"></script>
+    <script defer type="module" src="script.js"></script>
+</head>
+<body>
+    <div>
+        <!-- input tag : checkbox형태의 input -->
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <!-- for="checkbox"를 통해서, class나 id 이름이 checkbox인 input태그가, 라벨을 클릭해도 활성화됨 -->
+        <!-- label태그 안에 i태그 및 span태그를 묶어서 표현 -->
+        <label for="checkbox" class="checkbox-label">
+            <!-- fontawesome 적용 -->
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+</body>
+</html>
