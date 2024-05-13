@@ -38,6 +38,8 @@ export class Dialog {
         const move = this.target.clone().substract(this.pos).reduce(SPEED_REDUCE);
         this.pos.add(move);
 
+        this.centerPos = this.pos.clone().add(this.mousePos);
+
         ctx.beginPath();
         ctx.fillStyle = "#f4e55a";
         ctx.fillRect(this.pos.x, this.pos.y, WIDTH, HEIGHT);

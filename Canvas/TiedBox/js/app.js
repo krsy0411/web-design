@@ -66,6 +66,28 @@ class App {
         for(let i=0; i<this.items.length; i++) {
             this.items[i].animate(this.ctx);
         }
+
+        // 현재 선택된 아이템이 있으면 빨간점을 생성 | 위치는 현재 아이템의 중앙위치 기준으로 원
+        if(this.curItem) {
+            this.ctx.fillStyle = `#ff4338`;
+            this.ctx.strokeStyle = `#ff4338`;
+
+            // 현재 마우스 포인터의 위치에 빨간점 생성
+            this.ctx.beginPath();
+            this.ctx.arc(this.mousePos.x, this.mousePos.y, 8, 0, Math.PI * 2);
+            this.ctx.fill();
+
+            // 현재 아이템(dialog)의 위치에 빨간점 생성
+            this.ctx.beginPath();
+            this.ctx.arc(this.curItem.centerPos.x, this.curItem.centerPos.y, 8, 0, Math.PI * 2);
+            this.ctx.fill();
+
+            // 두 점을 잇는 빨간선 생성
+            this.ctx.beginPath();
+            this.ctx.moveTo(this.mousePos.x, this.mousePos.y);
+            this.ctx.lineTo(this.curItem.centerPos.x, this.curItem.centerPos.y);
+            this.ctx.stroke();
+        }
     }   
 
     onDown(e) {
