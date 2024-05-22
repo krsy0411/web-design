@@ -21,7 +21,6 @@ body {
             // clamp(최솟값, 선호값, 최대값) : 우선적으로는 선호값, 그러나 최소/최대값을 벗어나진 않음(범위 존재)
             // calc : 계산식 작성 가능
             font-size: clamp(2rem, calc(2rem + 1.5vw) , 8rem);
-            background-color: hsl(0, 0%, 50%);
 
             & .letter {
                 // css 변수 설정 : scss변수 설정은 $로 사용하는 식
@@ -40,16 +39,26 @@ body {
                     font-weight: var(--_fw-900);
                     color: var(--_clr-900);
                 }
-                // hover된 경우 : letter들에서 오른쪽의 className이 letter인 "형제 태그"에 대해서
+                // <인접 형제 요소> | hover된 경우 : letter들에서 오른쪽의 className이 letter인 "형제 태그"에 대해서
                 &:hover + .letter {
                     font-weight: var(--_fw-700);
                     color: var(--_clr-700);
                 }
-                // hover된 경우 : letter들에서 오른쪽의 className이 letter인 "형제 태그"의 그 다음 오른쪽 태그에 대해서
-                &:hove + .letter + .letter {
+                // <두번째 형제 요소> | hover된 경우 : letter들에서 오른쪽의 className이 letter인 "형제 태그"의 그 다음 오른쪽 태그에 대해서
+                &:hover + .letter + .letter {
                     font-weight: var(--_fw-400);
                     color: var(--_clr-400);
                 }
+
+                // 여기는 겹치는 부분 : :has선택자를 이용해서 이렇게도 코드를 짤 수 있다!
+                // &:has(+ .letter:hover) {
+                //     font-weight: var(--_fw-700);
+                //     color: var(--_clr-700);
+                // }
+                // &:has(+ .letter + .letter:hover) {
+                //     font-weight: var(--_fw-400);
+                //     color: var(--_clr-400);
+                // }
             }
         }
     }
