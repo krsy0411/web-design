@@ -35,10 +35,14 @@ body {
                 font-weight: var(--_fw-900);
                 transition: font-weight 0.5s ease;
 
+
                 &:hover {
                     font-weight: var(--_fw-900);
                     color: var(--_clr-900);
                 }
+
+                // 호버 글씨의 오른쪽 영역
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
                 // <인접 형제 요소> | hover된 경우 : letter들에서 오른쪽의 className이 letter인 "형제 태그"에 대해서
                 &:hover + .letter {
                     font-weight: var(--_fw-700);
@@ -50,15 +54,18 @@ body {
                     color: var(--_clr-400);
                 }
 
-                // 여기는 겹치는 부분 : :has선택자를 이용해서 이렇게도 코드를 짤 수 있다!
-                // &:has(+ .letter:hover) {
-                //     font-weight: var(--_fw-700);
-                //     color: var(--_clr-700);
-                // }
-                // &:has(+ .letter + .letter:hover) {
-                //     font-weight: var(--_fw-400);
-                //     color: var(--_clr-400);
-                // }
+                // 호버 글씨의 왼쪽 영역
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
+                // <호버 글자의 왼쪽 인접 형제 요소>
+                &:has(+ .letter:hover) {
+                    font-weight: var(--_fw-700);
+                    color: var(--_clr-700);
+                }
+                // <호버 글자의 왼쪽 두번째 형제 요소>
+                &:has(+ .letter + .letter:hover) {
+                    font-weight: var(--_fw-400);
+                    color: var(--_clr-400);
+                }
             }
         }
     }

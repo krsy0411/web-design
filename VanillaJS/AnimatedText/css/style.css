@@ -37,4 +37,12 @@ body .home p.animated-text .letter:hover + .letter {
 body .home p.animated-text .letter:hover + .letter + .letter {
   font-weight: var(--_fw-400);
   color: var(--_clr-400);
+}
+body .home p.animated-text .letter:has(+ .letter:hover) {
+  font-weight: var(--_fw-700);
+  color: var(--_clr-700);
+}
+body .home p.animated-text .letter:has(+ .letter + .letter:hover) {
+  font-weight: var(--_fw-400);
+  color: var(--_clr-400);
 }/*# sourceMappingURL=style.css.map */
