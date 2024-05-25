@@ -1,0 +1,95 @@
+* {
+    // 스타일링 초기화
+    box-sizing: border-box;
+    // 모든 요소에 width, height를 먹이는 구역이라, 여기선 width,height 속성을 설정하면 안됨
+
+    body {
+        margin: 0;
+        // /로 시작하는 경우 : 루트 디렉토리부터 시작한 경로를 설정합니다.
+        // img/bg.jpg : 현재 파일이 위치한 디렉토리에서 상대적으로 경로를 설정합니다.(./img/.. 방식과 동일 원리)
+        background-image: url("/img/bg.jpg");
+        // 이미지의 비율을 망치지 않게끔 요소의 사이즈 안에 맞춤
+        background-size: cover;
+        // background-position: center center(또는 center)와 동일한 의미 : 이미지가 요소의 중앙에 위치
+        background-position: 50%;
+        background-repeat: no-repeat;
+        height: 100%;
+        font-family: "Euclid Circular A";
+
+        // 버튼 공통 스타일 적용
+        button {
+            // 색상 투명하게 : 부모 요소 색 상속
+            background: transparent;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        aside.sidebar {
+            // 요소가 문서의 일반적인 흐름에서 제거되고, 브라우저의 뷰포트를 기준으로 배치 : 스크롤 시에도 항상 동일한 위치에 고정
+            position: fixed; top: 24px; left: 24px; bottom: 24px;
+            display: flex; flex-direction: column; 
+            // flex-item들끼리의 갭을 8px로 설정
+            gap: 8px;
+            width: 260px;
+            border-radius: 16px;
+            padding: 0 16px;
+            // 새로운 RGBa 색상 표기법
+            border: 1px solid rgb(255 255 255 / 8%);
+            background: rgb(0 0 0 / 40%);
+            // 요소의 뒤에 있는 영역에 필터 효과를 적용 : 블러(blur), 밝기(brightness), 대비(contrast) 등을 설정
+            backdrop-filter: blur(20px);
+            transition: width 0.4s;
+
+            header {
+                display: flex; align-items: center;
+                height: 72px;
+                padding: 0 1.25rem 0 0;
+                border-bottom: 1px solid rgb(255 255 255 / 8%);
+                // 헤더 내 버튼에만 적용 : 햄버거 모양
+                button {
+                    width: 52px;
+                }
+                img {
+                    height: 24px;
+                }
+            }
+            // 헤더 영역 바깥의 버튼에 대한 스타일링
+            button {
+                // 초기에 문서 흐름에 맞게끔 요소 설정 : 위치 이동 이전의 공간도 차지한 상태임
+                position: relative;
+                display: flex; gap: 16px; align-items: center;
+                height: 50px; width: 100%;
+                font-family: inherit; font-size: 16px; font-weight: 400; line-height: 1; color: rgb(255 255 255 / 95%);
+                padding: 0 16px;
+                border-radius: 6px;
+
+                // button 요소의 두 번째 자식 - p 요소를 선택
+                & p:nth-child(2) {
+                    flex: 1 1 auto; // p요소가 플렉스 아이템이 가능한 한 많이 공간을 차지하도록 설정
+                }
+                // sidebar 내의 버튼 태그가 호버된 상태거나, active클래스 네임이 있다면, 배경 색 변경
+                &:is(.active, :hover) {
+                    background: rgb(0 0 0 / 30%);
+                }
+
+                i {
+                    transition: 0.3s;
+                }
+                // 버튼 classname이 동적으로 active가 추가되었을때, 버튼 요소의 3번째 자식(i 태그)을 rotate -180도
+                .active > i:nth-child(3) {
+                    rotate: -180deg;
+                }
+                // 활성화안 된, 나머지 버튼들에 호버할때는, 좀 더 연하게 진해지도록 차이 만들기
+                &:not(.active):hover {
+                    background: rgb(0 0 0 / 10%);
+                }
+
+                ul {
+                    display: grid;
+                }
+            }
+        }
+    }
+}

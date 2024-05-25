@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideBar</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+    />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0"
+    />
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    />
+    <!-- akar-icons-fonts라는 npm 라이브러리가 있음 -->
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+    <script type="module" src="script.js" defer></script>
+</head>
+<body>
+    <!-- 새롭게 기억할 점 : ol, ul, li, h1~h6은 블록 요소(인라인 요소X) -->
+    <aside class="sidebar">
+        <header>
+            <!-- type:button | 클릭해도 폼을 제출하지 않습니다 -->
+            <button
+                type="button"
+                class="sidebar-burger"
+                onclick="toggleSideBar()"
+            >
+                <i class="ai-three-line-horizontal"></i>
+            </button>
+            <img src="img/bg.jpg" alt="background-image">
+        </header>
+        <!-- 리스트 목록 -->
+        <ul>
+            <li>
+                <button type="button" onclick="onClick(this)">
+                    <i class="ai-home-alt1"></i>
+                    <p>Home</p>
+                </button>
+            </li>
+            <li>
+                <button type="button" onclick="onClick(this)">
+                    <i class="ai-dashboard"></i>
+                    <p>Dashboard</p>
+                </button>
+            </li>
+            <li>
+                <button type="button" onclick="onClick(this)">
+                    <i class="ai-gear"></i>
+                    <p>Settings</p>
+                    <i class="ai-chevron-down-small"></i>
+                </button>
+                <!-- 리스트 내의 리스트 -->
+                <div class="sub-menu">
+                    <ul>
+                        <li>
+                            <button type="button">Display</button>
+                        </li>
+                        <li>
+                            <button type="button">Appearance</button>
+                        </li>
+                        <li>
+                            <button type="button">Preferences</button>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <button type="button" onclick="onClick(this)">
+                    <i class="ai-folder-add"></i>
+                    <p>Create</p>
+                    <i class="ai-chevron-down-small"></i>
+                  </button>
+                <!-- 리스트 내의 리스트 -->
+                  <div class="sub-menu">
+                    <ul>
+                        <li>
+                            <button type="button">Article</button>
+                        </li>
+                        <li>
+                            <button type="button">Document</button>
+                        </li>
+                        <li>
+                            <button type="button">Video</button>
+                        </li>
+                        <li>
+                            <button type="button">Presentation</button>
+                        </li>
+                    </ul>
+                  </div>
+            </li>
+            <li>
+                <button type="button" onclick="onClick(this)">
+                    <i class="ai-person"></i>
+                    <p>Profile</p>
+                    <i class="ai-chevron-down-small"></i>
+                  </button>
+                <!-- 리스트 내의 리스트 -->
+                <div class="sub-menu">
+                    <ul>
+                        <li>
+                            <button type="button">Avatar</button>
+                        </li>
+                        <li>
+                            <button type="button">Theme</button>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <button type="button" onclick="onClick(this)">
+                    <i class="ai-bell"></i>
+                    <p>Notifications</p>
+                </button>
+            </li>
+
+            <li>
+                <button type="button" onclick="onClick(this)">
+                    <i class="ai-cart"></i>
+                    <p>Products</p>
+                </button>
+            </li>
+
+            <li>
+                <button type="button" onclick="onClick(this)">
+                    <i class="ai-lock-on"></i>
+                    <p>Account</p>
+                </button>
+            </li>
+        </ul>
+    </aside>
+</body>
+</html>
