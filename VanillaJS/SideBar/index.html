@@ -21,7 +21,6 @@
     />
     <!-- akar-icons-fonts라는 npm 라이브러리가 있음 -->
     <script src="https://unpkg.com/akar-icons-fonts"></script>
-    <script type="module" src="script.js" defer></script>
 </head>
 <body>
     <!-- 새롭게 기억할 점 : ol, ul, li, h1~h6은 블록 요소(인라인 요소X) -->
@@ -31,11 +30,9 @@
             <button
                 type="button"
                 class="sidebar-burger"
-                onclick="toggleSideBar()"
             >
                 <i class="ai-three-line-horizontal"></i>
             </button>
-            <img src="img/bg.jpg" alt="background-image">
         </header>
         <!-- 리스트 목록 -->
         <ul>
@@ -79,7 +76,7 @@
                     <i class="ai-chevron-down-small"></i>
                   </button>
                 <!-- 리스트 내의 리스트 -->
-                  <div class="sub-menu">
+                <div class="sub-menu">
                     <ul>
                         <li>
                             <button type="button">Article</button>
@@ -94,7 +91,7 @@
                             <button type="button">Presentation</button>
                         </li>
                     </ul>
-                  </div>
+                </div>
             </li>
             <li>
                 <button type="button" onclick="onClick(this)">
@@ -136,5 +133,6 @@
             </li>
         </ul>
     </aside>
+    <script src="script.js"></script>
 </body>
 </html>

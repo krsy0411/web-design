@@ -3,7 +3,7 @@
 }
 * body {
   margin: 0;
-  background-image: url("/img/bg.jpg");
+  background-image: url("../img/bg.jpg");
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -44,9 +44,6 @@
 * body aside.sidebar header button {
   width: 52px;
 }
-* body aside.sidebar header img {
-  height: 24px;
-}
 * body aside.sidebar button {
   position: relative;
   display: flex;
@@ -71,12 +68,50 @@
 * body aside.sidebar button i {
   transition: 0.3s;
 }
-* body aside.sidebar button .active > i:nth-child(3) {
+* body aside.sidebar button.active > i:nth-child(3) {
   rotate: -180deg;
 }
 * body aside.sidebar button:not(.active):hover {
   background: rgba(0, 0, 0, 0.1);
 }
-* body aside.sidebar button ul {
+* body aside.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+* body aside.sidebar ul .sub-menu {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  transition: 0.5s;
+}
+* body aside.sidebar ul .sub-menu ul {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: grid;
+}
+* body aside.sidebar ul .sub-menu button {
+  padding-left: 52px;
+}
+* body aside.sidebar ul .sub-menu button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  translate: 0 -50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+* body aside.sidebar .material-symbols-outlined {
+  font-size: 16px;
+}
+* body aside.sidebar i {
+  font-size: 20px;
+  width: 20px;
+  max-width: 20px;
+  min-width: 20px;
 }/*# sourceMappingURL=style.css.map */
