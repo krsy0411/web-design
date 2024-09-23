@@ -39,6 +39,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:2aff2f060f2eaa1aead584f0d02a59b8381a7b28d8b6bddf7e4be1c580835b71c3a94b22c2b990284cc5b13977a215325775767c8124c2a2bf5de73f08c081e1#npm:18.3.1"],\
           ["react-scripts", "virtual:2aff2f060f2eaa1aead584f0d02a59b8381a7b28d8b6bddf7e4be1c580835b71c3a94b22c2b990284cc5b13977a215325775767c8124c2a2bf5de73f08c081e1#npm:5.0.1"],\
+          ["sass", "npm:1.79.3"],\
           ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"],\
           ["web-vitals", "npm:2.1.4"]\
         ],\
@@ -7034,6 +7035,14 @@ const RAW_RUNTIME_STATE =
           ["readdirp", "npm:3.6.0"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:4.0.1", {\
+        "packageLocation": "../../../../../.yarn/berry/cache/chokidar-npm-4.0.1-989df9ae3c-10c0.zip/node_modules/chokidar/",\
+        "packageDependencies": [\
+          ["chokidar", "npm:4.0.1"],\
+          ["readdirp", "npm:4.0.1"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["chownr", [\
@@ -10512,6 +10521,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../.yarn/berry/cache/immer-npm-9.0.21-03c48c58ea-10c0.zip/node_modules/immer/",\
         "packageDependencies": [\
           ["immer", "npm:9.0.21"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["immutable", [\
+      ["npm:4.3.7", {\
+        "packageLocation": "../../../../../.yarn/berry/cache/immutable-npm-4.3.7-a76ac3621b-10c0.zip/node_modules/immutable/",\
+        "packageDependencies": [\
+          ["immutable", "npm:4.3.7"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15641,6 +15659,13 @@ const RAW_RUNTIME_STATE =
           ["picomatch", "npm:2.3.1"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:4.0.1", {\
+        "packageLocation": "../../../../../.yarn/berry/cache/readdirp-npm-4.0.1-17b55c8032-10c0.zip/node_modules/readdirp/",\
+        "packageDependencies": [\
+          ["readdirp", "npm:4.0.1"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["recursive-readdir", [\
@@ -16055,6 +16080,18 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../.yarn/berry/cache/sanitize.css-npm-13.0.0-3424903b5d-10c0.zip/node_modules/sanitize.css/",\
         "packageDependencies": [\
           ["sanitize.css", "npm:13.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["sass", [\
+      ["npm:1.79.3", {\
+        "packageLocation": "../../../../../.yarn/berry/cache/sass-npm-1.79.3-2f182844db-10c0.zip/node_modules/sass/",\
+        "packageDependencies": [\
+          ["sass", "npm:1.79.3"],\
+          ["chokidar", "npm:4.0.1"],\
+          ["immutable", "npm:4.3.7"],\
+          ["source-map-js", "npm:1.2.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -18144,6 +18181,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:2aff2f060f2eaa1aead584f0d02a59b8381a7b28d8b6bddf7e4be1c580835b71c3a94b22c2b990284cc5b13977a215325775767c8124c2a2bf5de73f08c081e1#npm:18.3.1"],\
           ["react-scripts", "virtual:2aff2f060f2eaa1aead584f0d02a59b8381a7b28d8b6bddf7e4be1c580835b71c3a94b22c2b990284cc5b13977a215325775767c8124c2a2bf5de73f08c081e1#npm:5.0.1"],\
+          ["sass", "npm:1.79.3"],\
           ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"],\
           ["web-vitals", "npm:2.1.4"]\
         ],\
