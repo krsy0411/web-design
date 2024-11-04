@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>LEE-SIYOUNG | FORM</title>
+	</head>
+	<body>
+		<form action="https://webkmu.pythonanywhere.com/" method="get">
+			<h1>METRO Sandwiches</h1>
+			<p>
+				Our 30cm METRO Sandwiches are available for delivery. Build your custom
+				sandwich and we'll deliver it within 20 minutes
+			</p>
+			<fieldset>
+				<legend>Your Information</legend>
+				<p>
+					<label>Name : <input type="text" name="username" /></label>
+				</p>
+				<p>
+					<label>Address : <input type="text" name="address" /></label>
+				</p>
+				<p>
+					<label
+						>Telephone Number :
+						<input
+							type="tel"
+							pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}"
+							placeholder="예: 010-1234-5678"
+							name="telephone"
+					/></label>
+				</p>
+				<p>
+					<label>Email Address : <input type="email" name="email" /></label>
+				</p>
+				<p><label for="delivery-instructions">Delivery instructions</label></p>
+				<textarea id="delivery-instructions" name="instructions"></textarea>
+			</fieldset>
+
+			<h2>Design your custom METRO Sandwich:</h2>
+			<fieldset>
+				<legend>Sandwich specs</legend>
+				<fieldset>
+					<legend>Bread<em>(choose one)</em></legend>
+					<p>
+						<label
+							><input type="radio" name="bread" value="White" /> White</label
+						>
+					</p>
+					<p>
+						<label
+							><input type="radio" name="bread" value="Multigrain" />
+							Multigrain</label
+						>
+					</p>
+
+					<p>
+						<label
+							><input type="radio" name="bread" value="Italian" />
+							Italian</label
+						>
+					</p>
+
+					<p>
+						<label
+							><input type="radio" name="bread" value="Flatbread" />
+							Flatbread</label
+						>
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>Toppings<em>(Choose as many as you want)</em></legend>
+					<p>
+						<label
+							><input type="checkbox" value="Tomato Sauce" />Tomato Sauce</label
+						>
+					</p>
+					<p>
+						<label
+							><input type="checkbox" value="Cheese" name="toppings" />
+							Cheese</label
+						>
+					</p>
+					<p>
+						<label
+							><input type="checkbox" value="Pepperoni" name="toppings" />
+							Pepperoni</label
+						>
+					</p>
+					<p>
+						<label
+							><input type="checkbox" value="Mushrooms" name="toppings" />
+							Mushrooms</label
+						>
+					</p>
+				</fieldset>
+			</fieldset>
+			<fieldset>
+				<legend>Number</legend>
+				<p>
+					<label
+						>How many METRO sandwiches :
+						<select name="quantity">
+							<option value="1" selected>1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+						</select>
+					</label>
+				</p>
+			</fieldset>
+
+			<input type="submit" value="SUBMIT" />
+			<input type="reset" value="RESET" />
+		</form>
+	</body>
+</html>
